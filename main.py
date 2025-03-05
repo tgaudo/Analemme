@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit.runtime.scriptrunner import get_script_run_ctx as get_run_context
+# Importation non nécessaire qui peut causer des erreurs
 import plotly.graph_objects as go
 import numpy as np
 from solar_calculations import calculate_analemma, get_current_position
@@ -141,10 +141,5 @@ else:
     (pas visible sur le cadran solaire)
     """)
 
-def main():
-    ctx = get_run_context()
-    if ctx is None:
-        st.error("No script run context found")
-    
-if __name__ == "__main__":
-    main()
+# La fonction main n'est pas nécessaire car le code s'exécute déjà
+# et get_script_run_ctx est importé mais pas utilisé correctement
