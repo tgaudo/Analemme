@@ -1,0 +1,25 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { fill: white; font-family: Arial; }
+    .arrow { stroke: white; fill: none; }
+  </style>
+  
+  <!-- Figure-8 shape -->
+  <path d="M 200,20 C 300,50 300,150 200,180 C 100,150 100,50 200,20" 
+        stroke="#1E88E5" fill="none" stroke-width="2"/>
+  
+  <!-- Labels -->
+  <text x="210" y="15">Winter</text>
+  <text x="210" y="195">Summer</text>
+  
+  <!-- Arrows -->
+  <path class="arrow" d="M 190,100 L 210,100" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+</svg>
