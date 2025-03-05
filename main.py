@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit.script_run_context import get_script_run_ctx as get_run_context
+from streamlit.runtime.scriptrunner import get_script_run_ctx as get_run_context
 import plotly.graph_objects as go
 import numpy as np
 from solar_calculations import calculate_analemma, get_current_position
