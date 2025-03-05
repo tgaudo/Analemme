@@ -139,3 +139,9 @@ else:
     Le soleil est actuellement derrière le mur 
     (pas visible sur le cadran solaire)
     """)
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
