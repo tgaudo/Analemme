@@ -1,9 +1,12 @@
+
 import streamlit as st
-# Importation non nécessaire qui peut causer des erreurs
 import plotly.graph_objects as go
 import numpy as np
 from solar_calculations import calculate_analemma, get_current_position
 from datetime import datetime
+import threading
+# Import correct pour le ScriptRunContext
+from streamlit.runtime.scriptrunner import script_run_context
 
 # Page configuration
 st.set_page_config(
@@ -11,6 +14,10 @@ st.set_page_config(
     page_icon="☀️",
     layout="wide"
 )
+
+# Configurer manuellement le contexte d'exécution si nécessaire
+if threading.current_thread().name == 'MainThread' and script_run_context.get_script_run_ctx() is None:
+    script_run_context.add_script_run_ctx()
 
 # Title and introduction
 st.title("☀️ Explorateur d'Analemme Solaire - Cadran Solaire de Nice")
@@ -140,6 +147,3 @@ else:
     Le soleil est actuellement derrière le mur 
     (pas visible sur le cadran solaire)
     """)
-
-# La fonction main n'est pas nécessaire car le code s'exécute déjà
-# et get_script_run_ctx est importé mais pas utilisé correctement
